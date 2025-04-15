@@ -1,3 +1,14 @@
 {
-    "conversation": []
+    "conversation": [
+        {
+            "text": "You can find general medical help at https://dopomoha.ro/en/sanatate  and psychological help at https://dopomoha.ro/en/psychological-support-for-ukrainian-refugees  If neither of those fit your needs, you can also call a help hotline which is can be found at https://dopomoha.ro/en/call-center ",
+            "in_response_to": "Where can I seek medical attention?",
+            "persona": "user 1",
+            "conversation": "Health",
+            "tags": [
+                "English",
+                "Verified"
+            ]
+        }
+    ]
 }

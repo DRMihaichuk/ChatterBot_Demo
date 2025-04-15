@@ -4,32 +4,38 @@ import csv
 import io
 import json
 
-client = MongoClient("mongodb+srv://togekip00:BKOErjhmcKwUVNxF@chatterbotdb.f5fwu81.mongodb.net/")
-db = client["Dopomoha"]
-collection = db["statements"]
+
 
 # Replace with your sheet's ID
 sheet_id = "1QMV6EBLcvzgh_vQPs7wRQo6kwOwqc5UBZW6izwp33aU"
 sheet_name = "Data"
 csv_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
+script_id = "AKfycbxukihwVvSvLFBHOeEcrMPlCfk4TBNyLUqRUefo9_3WWdI0C2BzBUeyw8M-CHnKeuep"
+script_url = f"https://script.google.com/macros/s/{script_id}/exec"
 
 response = requests.get(csv_url)
 response.raise_for_status()  # Will raise an error if request failed
+resp = requests.get(script_url)
+if resp.status_code == 200:
+    print("Successfully triggered the Apps Script function!")
+else:
+    print(f"Failed to trigger Apps Script: {resp.status_code}")
 
 # Decode and parse the CSV content
 csv_file = io.StringIO(response.text)
 reader = csv.DictReader(csv_file)
 
-conversation_list = []
-for row in reader:
-    existing = collection.find_one({"in_response_to": row["Prompt"]})
+# Filtering out already trained data
+filtered_data = [row for row in reader if row['Status'] == 'Ready']
 
+conversation_list = []
+for row in filtered_data:
     if row["Verified"] == "Yes":
         row["Verified"] = "Verified"
     else:
         row["Verified"] = "Unverified"
 
-    if (row["Response"] != "") and (row["Prompt"] != "") and (row["Language"] != "") and (not existing):
+    if (row["Response"] != "") and (row["Prompt"] != "") and (row["Language"] != ""):
         conversation_entry = {
             "text": row["Response"],
             "in_response_to": row["Prompt"],

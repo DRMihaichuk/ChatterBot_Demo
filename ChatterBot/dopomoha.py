@@ -8,7 +8,7 @@ database = 'mongodb+srv://togekip00:BKOErjhmcKwUVNxF@chatterbotdb.f5fwu81.mongod
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Process some parameters.")
-    parser.add_argument('--mode', type=str, help='What mode should the bot be run in', default='all')
+    parser.add_argument('--mode', type=str, help='What mode should the bot be run in', default='talk')
     
     args = parser.parse_args()
     return args
