@@ -2,7 +2,6 @@ from chatterbot import ChatBot
 from chatterbot.trainers import JsonFileTrainer
 import argparse
 import subprocess
-import json
 
 database = 'mongodb+srv://togekip00:BKOErjhmcKwUVNxF@chatterbotdb.f5fwu81.mongodb.net/Dopomoha'
 

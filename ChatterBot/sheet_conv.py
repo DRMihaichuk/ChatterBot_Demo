@@ -4,8 +4,6 @@ import csv
 import io
 import json
 
-
-
 # Replace with your sheet's ID
 sheet_id = "1QMV6EBLcvzgh_vQPs7wRQo6kwOwqc5UBZW6izwp33aU"
 sheet_name = "Data"
@@ -30,10 +28,10 @@ filtered_data = [row for row in reader if row['Status'] == 'Ready']
 
 conversation_list = []
 for row in filtered_data:
-    if row["Verified"] == "Yes":
-        row["Verified"] = "Verified"
+    if row["Verified Translation"] == "Yes":
+        row["Verified Translation"] = "Verified Translation"
     else:
-        row["Verified"] = "Unverified"
+        row["Verified Translation"] = "Unverified Translation"
 
     if (row["Response"] != "") and (row["Prompt"] != "") and (row["Language"] != ""):
         conversation_entry = {
@@ -41,7 +39,7 @@ for row in filtered_data:
             "in_response_to": row["Prompt"],
             "persona": "user 1",
             "conversation": row["Subject"],
-            "tags": [row["Language"], row["Verified"]]
+            "tags": [row["Language"], row["Verified Translation"]]
         }
         conversation_list.append(conversation_entry)
 
