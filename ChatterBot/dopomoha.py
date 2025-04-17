@@ -30,7 +30,7 @@ trainer = JsonFileTrainer(
 def index():
     return jsonify({"message": "Chatbot API is running"}), 200
 
-@app.route('/train', methods=['POST'])
+@app.route('/train', methods=['GET'])
 def train():
     # Call sheet_conv.py and then train
     result = subprocess.run(["python", "sheet_conv.py"])
