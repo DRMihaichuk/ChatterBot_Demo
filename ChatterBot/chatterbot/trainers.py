@@ -487,7 +487,7 @@ class GenericFileTrainer(Trainer):
                 statements_to_remove.append(statement)
 
             for stmt in statements_to_remove:
-                self.chatbot.storage.remove(stmt)
+                self.chatbot.storage.delete(stmt)
 
         if files_processed:
             self.chatbot.logger.info(
