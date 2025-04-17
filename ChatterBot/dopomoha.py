@@ -51,5 +51,14 @@ def talk():
     response = chatbot.get_response(user_input)
     return jsonify({"response": str(response)}), 200
 
+@app.route('/untrain', methods=['GET'])
+def untrain():
+    result = subprocess.run(["python", "ChatterBot/sheet_conv.py --extract Untrain"])
+    if result.returncode == 1:
+        return jsonify({"status": "No new data was added to training"}), 200
+    else:
+        trainer.untrain('./training_data.json')
+        return jsonify({"status": "Removed training successfully"}), 200
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
