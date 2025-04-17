@@ -33,7 +33,7 @@ def index():
 @app.route('/train', methods=['GET'])
 def train():
     # Call sheet_conv.py and then train
-    result = subprocess.run(["python", "sheet_conv.py"])
+    result = subprocess.run(["python", "ChatterBot/sheet_conv.py"])
     if result.returncode == 1:
         return jsonify({"status": "No new data was added to training"}), 200
     else:
