@@ -72,6 +72,14 @@
         messagesDiv.innerHTML += `<div><em>Error: ${err}</em></div>`;
       });
     }
+    window.onload = function () {
+        document.getElementById("messageInput").addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+            e.preventDefault(); // Prevent form submission or line break
+            sendMessage();      // Call your sendMessage function
+            }
+        });
+    };
   </script>
 </body>
 </html>
