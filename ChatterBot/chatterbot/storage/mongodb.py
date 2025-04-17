@@ -243,6 +243,15 @@ class MongoDatabaseAdapter(StorageAdapter):
         """
         self.statements.delete_one({'text': statement_text})
 
+    def delete(self, statement):
+        """
+        Removes the statement that matches the input text and in response to text.
+        """
+        self.statements.delete_one({
+            'text': statement.text,
+            'in_response_to': statement.in_response_to
+        })
+
     def drop(self):
         """
         Remove the database.
