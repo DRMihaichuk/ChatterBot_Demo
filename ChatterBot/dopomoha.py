@@ -53,7 +53,7 @@ def talk():
 
 @app.route('/untrain', methods=['GET'])
 def untrain():
-    result = subprocess.run(["python", "ChatterBot/sheet_conv.py --extract Untrain"])
+    result = subprocess.run(["python", "ChatterBot/sheet_conv.py", "--extract", "Untrain"])
     if result.returncode == 1:
         return jsonify({"status": "No new data was added to training"}), 200
     else:
