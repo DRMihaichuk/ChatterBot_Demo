@@ -71,6 +71,16 @@ class StorageAdapter(object):
         raise self.AdapterMethodNotImplementedError(
             'The `remove` method is not implemented by this adapter.'
         )
+    
+    def delete(self, statement):
+        """
+        Removes the statement that matches the input text.
+        Removes any responses from statements where the response text matches
+        the input text.
+        """
+        raise self.AdapterMethodNotImplementedError(
+            'The `remove` method is not implemented by this adapter.'
+        )
 
     def filter(self, **kwargs):
         """
