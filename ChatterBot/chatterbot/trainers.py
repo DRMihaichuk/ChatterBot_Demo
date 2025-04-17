@@ -364,6 +364,67 @@ class GenericFileTrainer(Trainer):
                 )
             )
 
+    def untrain(self, data_path: str, limit=None):
+        """
+        Remove training data from the chatbot based on the contents of a file.
+
+        :param str data_path: The path to the data file or directory.
+        :param int limit: The maximum number of files to process.
+        """
+
+        if data_path is None:
+            raise self.TrainerInitializationException(
+                'The data_path argument must be set to the path of a file or directory.'
+            )
+
+        data_files = self._get_file_list(data_path, limit)
+        files_processed = 0
+
+        for data_file in tqdm(data_files, desc='Untraining', disable=self.disable_progress):
+
+            file_extension = data_file.split('.')[-1].lower()
+            file_abspath = os.path.abspath(data_file)
+
+            with open(file_abspath, 'r', encoding='utf-8') as file:
+
+                if self.file_extension == 'json':
+                    data = json.load(file)
+                    data = data['conversation']
+                elif file_extension == 'csv':
+                    use_header = bool(isinstance(next(iter(self.field_map.values())), str))
+                    data = csv.DictReader(file) if use_header else csv.reader(file)
+                elif file_extension == 'tsv':
+                    use_header = bool(isinstance(next(iter(self.field_map.values())), str))
+                    data = csv.DictReader(file, delimiter='\t') if use_header else csv.reader(file, delimiter='\t')
+                else:
+                    self.logger.warning(f'Skipping unsupported file type: {file_extension}')
+                    continue
+
+                files_processed += 1
+
+                text_field = self.field_map['text']
+                response_field = self.field_map.get('in_response_to', None)
+
+                for row in data:
+                    if not row or not row.get(text_field):
+                        continue
+
+                    filter_query = {
+                        "text": row[text_field]
+                    }
+
+                    if response_field and row.get(response_field):
+                        filter_query["in_response_to"] = row[response_field]
+
+                    # Delete matching statement
+                    result = self.chatbot.storage.mongo_client['Dopomoha']['statements'].delete_one(filter_query)
+                    self.logger.info(f"Deleted {result.deleted_count} statement(s) for: '{row[text_field][:40]}...'")
+
+        if files_processed:
+            self.logger.info(f'Untraining completed. {files_processed} file(s) processed.')
+        else:
+            self.logger.warning(f'No [{self.file_extension}] files were detected at: {data_path}')
+
 class CsvFileTrainer(GenericFileTrainer):
     """
     .. note::
