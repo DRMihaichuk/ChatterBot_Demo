@@ -1,9 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from chatterbot import ChatBot
 from chatterbot.trainers import JsonFileTrainer
 import subprocess
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # MongoDB URI for ChatterBot
 database = 'mongodb+srv://togekip00:BKOErjhmcKwUVNxF@chatterbotdb.f5fwu81.mongodb.net/Dopomoha'
@@ -28,7 +30,7 @@ trainer = JsonFileTrainer(
 
 @app.route('/')
 def index():
-    return jsonify({"message": "Chatbot API is running"}), 200
+    return render_template('chat.html')
 
 @app.route('/train', methods=['GET'])
 def train():
@@ -40,7 +42,7 @@ def train():
         trainer.train('./training_data.json')
         return jsonify({"status": "Training completed successfully"}), 200
 
-@app.route('/talk', methods=['GET'])
+@app.route('/talk', methods=['POST'])
 def talk():
     user_input = request.json.get("message")
     if not user_input:
