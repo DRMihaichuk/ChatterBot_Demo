@@ -40,7 +40,7 @@ def train():
         trainer.train('./training_data.json')
         return jsonify({"status": "Training completed successfully"}), 200
 
-@app.route('/talk', methods=['POST'])
+@app.route('/talk', methods=['GET'])
 def talk():
     user_input = request.json.get("message")
     if not user_input:
