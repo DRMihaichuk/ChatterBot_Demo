@@ -116,6 +116,6 @@ def build_training_data(url):
 
     return chatbot_entries
 
-data = {"data": build_training_data(args.url) }
+data = build_training_data(args.url)
 with open("scrape_data.json", "w", encoding='utf-8') as f:
     json.dump(data, f, indent=4)
