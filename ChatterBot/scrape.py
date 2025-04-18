@@ -48,7 +48,9 @@ def extract_h1_and_paragraphs(url):
     return entries
 
 def generate_questions(heading):
-    prompt = f"Generate only a Python array of 1-5 different natural short questions a user might ask if they were looking for information under the heading: '{heading}'."
+    question_number = 3
+
+    prompt = f"Generate only a Python array of {question_number} different natural short questions a user might ask if they were looking for information under the heading: '{heading}'."
 
     try:
         response = openai.ChatCompletion.create(
