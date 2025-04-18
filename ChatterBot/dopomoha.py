@@ -61,7 +61,7 @@ def untrain():
         trainer.untrain('./training_data.json')
         return jsonify({"status": "Removed training successfully"}), 200
     
-@app.route('/scrape-data', methods=['GET'])
+@app.route('/scrape_data', methods=['GET'])
 def scrapedData():
     with open('scrape_data.json', 'r') as f:
         data = json.load(f)
