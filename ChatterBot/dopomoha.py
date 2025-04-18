@@ -5,7 +5,7 @@ import subprocess
 from flask_cors import CORS
 import json
 import os
-from scrape import build_training_data
+from ChatterBot.scrape import build_training_data
 
 app = Flask(__name__)
 CORS(app)
