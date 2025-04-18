@@ -5,6 +5,7 @@ import subprocess
 from flask_cors import CORS
 import json
 import os
+from scrape import build_training_data
 
 app = Flask(__name__)
 CORS(app)
@@ -64,10 +65,16 @@ def untrain():
     
 @app.route('/scrape_data', methods=['GET'])
 def scrapedData():
-    file_path = os.path.join(os.path.dirname(__file__), 'scrape_data.json')
-    with open(file_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    return jsonify(data)
+    url = request.args.get('url')
+    if not url:
+        return jsonify({"error": "URL parameter is required"}), 400
+
+    try:
+        data = build_training_data(url)
+        return jsonify(data)
+    except Exception as e:
+        print(f"Error scraping data: {e}")
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)

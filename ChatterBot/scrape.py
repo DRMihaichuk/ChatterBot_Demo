@@ -12,9 +12,6 @@ from dotenv import load_dotenv
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 openai.api_key = api_key
-parser = argparse.ArgumentParser(description="For scraping wbesites and generating training data on them")
-parser.add_argument("url", help="what url should be scraped")
-args = parser.parse_args()
 
 def extract_h1_and_paragraphs(url):
     response = requests.get(url)
@@ -74,8 +71,8 @@ def generate_questions(heading):
         print(f"⚠️ Unexpected error in generate_questions: {e}")
         return []
 
-def generate_summary(content):
-    prompt = f"Generate a summary of the information in this content: '{content}'"
+def generate_answer(question, content):
+    prompt = f"Answer the question '{question}' using the information stated here: '{content}'"
 
     try:
         response = openai.ChatCompletion.create(
@@ -87,7 +84,7 @@ def generate_summary(content):
     except RateLimitError:
         print("⚠️ Rate limit or quota reached. Waiting 3 seconds before retrying...")
         time.sleep(3)
-        return generate_summary(content)  # Retry recursively
+        return generate_answer(question, content)  # Retry recursively
     except APIError as e:
         print(f"⚠️ OpenAI API error: {e}")
         return "Summary unavailable."
@@ -100,14 +97,13 @@ def build_training_data(url):
     chatbot_entries = []
 
     for entry in scraped_data:
-        summary = generate_summary(entry['summary'])
-        brief_answer = f"{summary} For more details, visit {entry['url']}."
         user_questions = generate_questions(entry['heading'])
 
         for question in user_questions:
+            answer = f"{generate_answer(question, entry['summary'])} For more details, visit {entry['url']}."
             chatbot_entries.append({
                 "aPrompt": question,
-                "bResponse": brief_answer,
+                "bResponse": answer,
                 "cSubject": '',
                 "dLanguage": 'English',
                 "eVerified Language": 'Yes',
@@ -116,6 +112,10 @@ def build_training_data(url):
 
     return chatbot_entries
 
-data = build_training_data(args.url)
-with open("scrape_data.json", "w", encoding='utf-8') as f:
-    json.dump(data, f, indent=4)
+if __name__ == "__main__":
+    # Only runs when executed directly, not when imported
+    parser = argparse.ArgumentParser(description="Scrape for training")
+    parser.add_argument("url", help="URL to scrape")
+    args = parser.parse_args()
+    data = build_training_data(args.url)
+    print(json.dumps(data, indent=2))
