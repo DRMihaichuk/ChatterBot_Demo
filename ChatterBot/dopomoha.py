@@ -3,6 +3,7 @@ from chatterbot import ChatBot
 from chatterbot.trainers import JsonFileTrainer
 import subprocess
 from flask_cors import CORS
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -59,6 +60,12 @@ def untrain():
     else:
         trainer.untrain('./training_data.json')
         return jsonify({"status": "Removed training successfully"}), 200
+    
+@app.route('/scrape-data', methods=['GET'])
+def scrapedData():
+    with open('scrape_data.json', 'r') as f:
+        data = json.load(f)
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
