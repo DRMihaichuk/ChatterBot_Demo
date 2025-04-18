@@ -5,7 +5,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "How can I tell if someone is taking advantage of me under the guise of helping me?",
@@ -13,7 +13,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What are some red flags that indicate I may be being exploited by someone who claims to have my best interests at heart?",
@@ -21,7 +21,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Are there any signs that someone who is supposed to be helping me is actually exploiting me?",
@@ -29,7 +29,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What are some indicators that I may be in a situation of exploitation with someone who claims to be helping me?",
@@ -37,7 +37,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "How can I recognize if someone is manipulating me under the pretense of assisting me?",
@@ -45,7 +45,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What behaviors should I be cautious of if someone is supposedly aiding me but may actually be exploiting me?",
@@ -53,7 +53,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Are there any signals that suggest I am being taken advantage of by someone who says they are helping me?",
@@ -61,7 +61,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "How can I protect myself from human trafficking?",
@@ -69,7 +69,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What are some steps I can take to reduce my risk of being trafficked?",
@@ -77,7 +77,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What can individuals do to prevent human trafficking?",
@@ -85,7 +85,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Are there specific safety measures I can take to avoid becoming a victim of trafficking?",
@@ -93,7 +93,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What resources are available for those seeking to avoid trafficking situations?",
@@ -101,7 +101,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "How can I stay informed about potential trafficking risks in my community?",
@@ -109,7 +109,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What role does awareness play in reducing vulnerability to trafficking?",
@@ -117,7 +117,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Are there certain behaviors or habits that may increase my risk of being trafficked?",
@@ -125,7 +125,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What are some red flags to watch out for that may indicate a trafficking situation?",
@@ -133,7 +133,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "How can I empower myself and others to resist and combat trafficking?",
@@ -141,7 +141,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "How can I report sexual exploitation and abuse committed by humanitarian workers?",
@@ -149,7 +149,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What steps should I take if I have information about sexual exploitation and abuse by humanitarian workers?",
@@ -157,7 +157,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Is there a specific hotline or reporting mechanism for reporting sexual exploitation and abuse by humanitarian workers?",
@@ -165,7 +165,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Who should I contact if I suspect a humanitarian worker of committing sexual exploitation and abuse?",
@@ -173,7 +173,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What protections are in place for individuals who report sexual exploitation and abuse by humanitarian workers?",
@@ -181,7 +181,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Are there any organizations dedicated to investigating and addressing sexual exploitation and abuse within the humanitarian sector?",
@@ -189,7 +189,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What are the consequences for humanitarian workers found guilty of sexual exploitation and abuse?",
@@ -197,7 +197,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "How can I ensure my report of sexual exploitation and abuse by a humanitarian worker is taken seriously and acted upon?",
@@ -205,7 +205,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Are there any guidelines or protocols for reporting sexual exploitation and abuse within humanitarian organizations?",
@@ -213,7 +213,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What support services are available for survivors of sexual exploitation and abuse by humanitarian workers?",
@@ -221,7 +221,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "How can I ensure my child's safety online?",
@@ -229,7 +229,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What are some ways to teach my child about stranger danger?",
@@ -237,7 +237,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Are there any apps or devices that can help track my child's whereabouts?",
@@ -245,7 +245,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What should I do if my child is being bullied at school?",
@@ -253,7 +253,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "How can I talk to my child about personal safety without scaring them?",
@@ -261,7 +261,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What are some safety measures I should take when my child is playing outside?",
@@ -269,7 +269,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "How can I protect my child from potential predators?",
@@ -277,7 +277,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Are there any self-defense classes or programs for children?",
@@ -285,7 +285,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What should I do if my child goes missing?",
@@ -293,7 +293,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What are some ways to teach my child about the importance of not sharing personal information with strangers?",
@@ -301,7 +301,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Ce înseamnă exact sprijin de urgență?",
@@ -309,7 +309,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Care sunt criteriile pentru a beneficia de sprijin de urgență?",
@@ -317,7 +317,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Cum pot solicita sprijin de urgență?",
@@ -325,7 +325,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Care sunt documentele necesare pentru a obține sprijin de urgență?",
@@ -333,7 +333,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Cât timp durează procesul de acordare a sprijinului de urgență?",
@@ -341,7 +341,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Care sunt instituțiile responsabile de acordarea sprijinului de urgență?",
@@ -349,7 +349,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Ce tipuri de sprijin de urgență sunt disponibile?",
@@ -357,7 +357,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Cum pot verifica stadiul cererii mele de sprijin de urgență?",
@@ -365,7 +365,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Pot beneficia de sprijin de urgență și dacă nu am domiciliul în acea zonă?",
@@ -373,7 +373,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "Ce se întâmplă dacă cererea mea de sprijin de urgență este respinsă?",
@@ -381,7 +381,7 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     },
     {
         "aPrompt": "What are the different types of roofing materials available for a roof?How long does it typically take to install a new roof?What are the signs that indicate a roof needs to be replaced?What is the average cost of installing a new roof?Are there any eco-friendly roofing options available?What factors should be considered when choosing a roofing contractor?What are the advantages of metal roofing for a home?How can I prevent leaks and water damage on my roof?What are the maintenance requirements for different types of roofs?What are the benefits of proper roof insulation?",
@@ -389,6 +389,6 @@
         "cSubject": "",
         "dLanguage": "English",
         "eVerified Language": "Yes",
-        "Status": "Imported"
+        "fStatus": "Imported"
     }
 ]
