@@ -5,7 +5,7 @@ with open('scrape_data.json', 'r', encoding='utf-8') as file:
     data = json.load(file)
 
 # Iterate and add 'subject' based on user input or logic
-for entry in data['conversation']:
+for entry in data:
     entry['Subject'] = ''
     entry['Language'] = 'English'
     entry['Verified Language'] = 'Yes'

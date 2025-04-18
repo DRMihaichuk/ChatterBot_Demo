@@ -106,12 +106,12 @@ def build_training_data(url):
 
         for question in user_questions:
             chatbot_entries.append({
-                "Prompt": question,
-                "Response": brief_answer,
-                "Subject": '',
-                "Language": 'English',
-                "Verified Language": 'Yes',
-                "Status": 'Imported'
+                "aPrompt": question,
+                "bResponse": brief_answer,
+                "cSubject": '',
+                "dLanguage": 'English',
+                "eVerified Language": 'Yes',
+                "fStatus": 'Imported'
             })
 
     return chatbot_entries
