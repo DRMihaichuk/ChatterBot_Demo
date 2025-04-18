@@ -48,7 +48,7 @@ def extract_h1_and_paragraphs(url):
     return entries
 
 def generate_questions(heading):
-    prompt = f"Generate only a Python array of different natural questions a user might ask if they were looking for information under the heading: '{heading}'."
+    prompt = f"Generate only a Python array of 1-5 different natural short questions a user might ask if they were looking for information under the heading: '{heading}'."
 
     try:
         response = openai.ChatCompletion.create(
@@ -72,7 +72,7 @@ def generate_questions(heading):
         return []
 
 def generate_answer(question, content):
-    prompt = f"Answer the question '{question}' using the information stated here: '{content}'"
+    prompt = f"Answer the question '{question}' using the information stated here: '{content}' in a brief response"
 
     try:
         response = openai.ChatCompletion.create(
@@ -94,7 +94,7 @@ def generate_answer(question, content):
 
 def build_training_data(url):
     scraped_data = extract_h1_and_paragraphs(url)
-    scraped_data = scraped_data[:1]
+    # scraped_data = scraped_data[:1]
     chatbot_entries = []
 
     for entry in scraped_data:
