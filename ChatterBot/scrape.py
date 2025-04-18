@@ -45,12 +45,14 @@ def extract_h1_and_paragraphs(url):
         else:
             i += 1
 
-    return entries
+    question_number = int(18 / len(entries))
+    if question_number <= 0:
+        entries = entries[:18]
+        question_number = 1
+    return entries, question_number
 
-def generate_questions(heading):
-    question_number = 4
-
-    prompt = f"Generate only a Python array of {question_number} different natural short questions a user might ask if they were looking for information under the heading: '{heading}'."
+def generate_questions(heading, question_number):
+    prompt = f"Generate only a Python array of {question_number} different short questions a user might ask if they were looking for information under the heading: '{heading}'."
 
     try:
         response = openai.ChatCompletion.create(
@@ -95,12 +97,12 @@ def generate_answer(question, content):
         return "Summary unavailable."
 
 def build_training_data(url):
-    scraped_data = extract_h1_and_paragraphs(url)
-    scraped_data = scraped_data[:5]
+    scraped_data, qs = extract_h1_and_paragraphs(url)
+    # scraped_data = scraped_data[:5]
     chatbot_entries = []
 
     for entry in scraped_data:
-        user_questions = generate_questions(entry['heading'])
+        user_questions = generate_questions(entry['heading'], qs)
 
         for question in user_questions:
             answer = f"{generate_answer(question, entry['summary'])} For more details, visit {entry['url']}."
