@@ -94,7 +94,7 @@ def generate_answer(question, content):
 
 def build_training_data(url):
     scraped_data = extract_h1_and_paragraphs(url)
-    scraped_data = scraped_data[:3]
+    scraped_data = scraped_data[:1]
     chatbot_entries = []
 
     for entry in scraped_data:
