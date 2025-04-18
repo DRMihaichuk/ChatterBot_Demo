@@ -48,7 +48,7 @@ def extract_h1_and_paragraphs(url):
     return entries
 
 def generate_questions(heading):
-    question_number = 3
+    question_number = 4
 
     prompt = f"Generate only a Python array of {question_number} different natural short questions a user might ask if they were looking for information under the heading: '{heading}'."
 
@@ -96,7 +96,7 @@ def generate_answer(question, content):
 
 def build_training_data(url):
     scraped_data = extract_h1_and_paragraphs(url)
-    # scraped_data = scraped_data[:3]
+    scraped_data = scraped_data[:5]
     chatbot_entries = []
 
     for entry in scraped_data:
