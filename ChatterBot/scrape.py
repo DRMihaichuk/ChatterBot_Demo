@@ -13,7 +13,7 @@ load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 openai.api_key = api_key
 
-def extract_h1_and_paragraphs(url):
+def extract_h1_and_paragraphs(url, format):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -45,14 +45,23 @@ def extract_h1_and_paragraphs(url):
         else:
             i += 1
 
-    question_number = int(18 / len(entries))
-    if question_number <= 0:
-        entries = entries[:18]
-        question_number = 1
-    return entries, question_number
+    if format == "JSON":
+        question_number = int(18 / len(entries))
+        if question_number <= 0:
+            entries = entries[:18]
+            question_number = 1
+        # print(len(entries), question_number)
+        return entries, question_number
+    return entries, "many"
 
 def generate_questions(heading, question_number):
-    prompt = f"Generate only a Python array of {question_number} different short questions a user might ask if they were looking for information under the heading: '{heading}'."
+    prompt = f"""
+    Generate exactly {question_number} short, distinct questions a user might ask under the heading: '{heading}'.
+
+    Return only a valid Python list of strings. 
+    Each item should be a clean question in quotes, with no numbering or line breaks in the list elements.
+    Example format: ["What is X?", "How does Y work?", "Why is Z important?"]
+    """
 
     try:
         response = openai.ChatCompletion.create(
@@ -96,24 +105,31 @@ def generate_answer(question, content):
         print(f"⚠️ Unexpected error in generate_summary: {e}")
         return "Summary unavailable."
 
-def build_training_data(url):
-    scraped_data, qs = extract_h1_and_paragraphs(url)
-    # scraped_data = scraped_data[:5]
-    chatbot_entries = []
+def build_training_data(url, format):
+    scraped_data, qs = extract_h1_and_paragraphs(url, format)
+
+    if format == "JSON":
+        chatbot_entries = []
+    else:
+        chatbot_entries = ''
 
     for entry in scraped_data:
         user_questions = generate_questions(entry['heading'], qs)
+        # print(user_questions)
 
         for question in user_questions:
             answer = f"{generate_answer(question, entry['summary'])} For more details, visit {entry['url']}."
-            chatbot_entries.append({
-                "aPrompt": question,
-                "bResponse": answer,
-                "cSubject": '',
-                "dLanguage": 'English',
-                "eVerified Language": 'Yes',
-                "fStatus": 'Imported'
-            })
+            if format == "JSON":
+                chatbot_entries.append({
+                    "aPrompt": question,
+                    "bResponse": answer,
+                    "cSubject": '',
+                    "dLanguage": 'English',
+                    "eVerified Language": 'Yes',
+                    "fStatus": 'Scraped'
+                })
+            else:
+                chatbot_entries += f'"{question}","{answer}","","English","Yes","Scraped"\n'
 
     return chatbot_entries
 
@@ -121,6 +137,13 @@ if __name__ == "__main__":
     # Only runs when executed directly, not when imported
     parser = argparse.ArgumentParser(description="Scrape for training")
     parser.add_argument("url", help="URL to scrape")
+    parser.add_argument("--format", help="the format of the information given", default="JSON")
     args = parser.parse_args()
-    data = build_training_data(args.url)
-    print(json.dumps(data, indent=2))
+    args.format = args.format.upper()
+    data = build_training_data(args.url, args.format)
+    if args.format == "JSON":
+        with open("scrape_data.json", "w") as f:
+            json.dump(data, f, indent=2)
+    else:
+        with open("scrape_data.csv", "w") as f:
+            f.write(data)
