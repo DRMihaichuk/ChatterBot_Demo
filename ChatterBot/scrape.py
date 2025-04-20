@@ -141,11 +141,11 @@ def build_training_data(url, format):
                     "bResponse": answer,
                     "cSubject": '',
                     "dLanguage": language,
-                    "eVerified Language": 'Yes',
+                    "eVerified Translation": 'No',
                     "fStatus": 'Scraped'
                 })
             else:
-                chatbot_entries += f'"{question}","{answer}","","{language}","Yes","Scraped"\n'
+                chatbot_entries += f'"{question}","{answer}","","{language}","No","Scraped"\n'
 
     return chatbot_entries
 
