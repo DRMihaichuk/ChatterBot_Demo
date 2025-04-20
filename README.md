@@ -21,10 +21,6 @@ so we may later evaluate if this chatbot is a good idea before going forward wit
 
 **Training**
 
-For ease of access, I have it set up so it is trained from a Google Sheet which is located here:
-
-https://docs.google.com/spreadsheets/d/1QMV6EBLcvzgh_vQPs7wRQo6kwOwqc5UBZW6izwp33aU/edit?gid=1726193122#gid=1726193122
-
 It should allow editting privilages to anyone with a link, but let me know if that is not the case.
 
 In the spreadsheet, there are 5 columns that being the Prompt (what the user enters), the Response (what the chatbot responds with), the Subject (categorization of the information requested), the Language (what language the prompt and response are written in), and Verified (which is for verifying that the questions are correctly translated for that given language). I am open to add more columns for organization and sorting purposes if you recommend any, but refrain from adding them for now or it may break the conversion.
