@@ -46,7 +46,7 @@ def extract_h1_and_paragraphs(url, format):
         else:
             i += 1
 
-    if format == "JSON":
+    if format == "REND":
         question_number = int(18 / len(entries))
         if question_number <= 0:
             entries = entries[:18]
@@ -110,20 +110,21 @@ def build_training_data(url, format):
     parsed_url = urlparse(url)
     path_parts = parsed_url.path.strip('/').split('/')
     if path_parts and len(path_parts) > 0:
-        if path_parts == 'ro':
+        if path_parts[0] == 'ro':
             language = "Romanian"
-        elif path_parts == 'ru':
+        elif path_parts[0] == 'ru':
             language = "Russian"
-        elif path_parts == 'uk':
+        elif path_parts[0] == 'uk':
             language = "Ukrainian"
-        elif path_parts == 'en':
+        elif path_parts[0] == 'en':
             language = "English"
         else:
+            print(path_parts[0])
             language = "Unrecognized"
 
     scraped_data, qs = extract_h1_and_paragraphs(url, format)
 
-    if format == "JSON":
+    if (format == "JSON") or (format == "REND"):
         chatbot_entries = []
     else:
         chatbot_entries = ''
@@ -134,7 +135,7 @@ def build_training_data(url, format):
 
         for question in user_questions:
             answer = f"{generate_answer(question, entry['summary'])} For more details, visit {entry['url']}."
-            if format == "JSON":
+            if (format == "JSON") or (format == "REND"):
                 chatbot_entries.append({
                     "aPrompt": question,
                     "bResponse": answer,
@@ -152,11 +153,15 @@ if __name__ == "__main__":
     # Only runs when executed directly, not when imported
     parser = argparse.ArgumentParser(description="Scrape for training")
     parser.add_argument("url", help="URL to scrape")
-    parser.add_argument("--format", help="the format of the information given", default="JSON")
+    parser.add_argument("format", help="the format of the information given")
     args = parser.parse_args()
     args.format = args.format.upper()
+    if (args.format != "JSON") and (args.format != "CSV"):
+        print("Unrecognized format: please try either JSON or CSV")
+        exit(-1)
     data = build_training_data(args.url, args.format)
     if args.format == "JSON":
+        data = { "conversation": data }
         with open("scrape_data.json", "w") as f:
             json.dump(data, f, indent=2)
     else:

@@ -70,7 +70,7 @@ def scrapedData():
         return jsonify({"error": "URL parameter is required"}), 400
 
     try:
-        data = build_training_data(url, "JSON")
+        data = build_training_data(url, "REND")
         return jsonify(data)
     except Exception as e:
         print(f"Error scraping data: {e}")
