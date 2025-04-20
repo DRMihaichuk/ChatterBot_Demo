@@ -8,6 +8,7 @@ import time
 from openai.error import RateLimitError, APIError
 import os
 from dotenv import load_dotenv
+from urllib.parse import urlparse
 
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
@@ -106,6 +107,20 @@ def generate_answer(question, content):
         return "Summary unavailable."
 
 def build_training_data(url, format):
+    parsed_url = urlparse(url)
+    path_parts = parsed_url.path.strip('/').split('/')
+    if path_parts and len(path_parts) > 0:
+        if path_parts == 'ro':
+            language = "Romanian"
+        elif path_parts == 'ru':
+            language = "Russian"
+        elif path_parts == 'uk':
+            language = "Ukrainian"
+        elif path_parts == 'en':
+            language = "English"
+        else:
+            language = "Unrecognized"
+
     scraped_data, qs = extract_h1_and_paragraphs(url, format)
 
     if format == "JSON":
@@ -124,12 +139,12 @@ def build_training_data(url, format):
                     "aPrompt": question,
                     "bResponse": answer,
                     "cSubject": '',
-                    "dLanguage": 'English',
+                    "dLanguage": language,
                     "eVerified Language": 'Yes',
                     "fStatus": 'Scraped'
                 })
             else:
-                chatbot_entries += f'"{question}","{answer}","","English","Yes","Scraped"\n'
+                chatbot_entries += f'"{question}","{answer}","","{language}","Yes","Scraped"\n'
 
     return chatbot_entries
 
