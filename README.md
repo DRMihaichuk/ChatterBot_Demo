@@ -32,26 +32,49 @@ All functionality for the Google Sheet is under the Chatbot Functions tab.
 
 *1. Train Chatbot*
 
-This function will automatically train all data that has the Status 'Ready'. Once all of the data has been trained, all data that has the Status 'Ready' will be changed to 'Trained' instead. It is advised that while someone is training the Chatbot through Google Sheets that everyone else working on the spreadsheet does not change any Statuses to or from 'Ready' or some data may get false flagged as being trained on while other data may be false flagged as not being trained. For this reason, it is recommended that you coordinate when training to make sure these issues do not arise. As mentioned before, Render will spindown inactive deployments so training for the first time the deployment has been active in a while will result in it taking a much longer time. To avoid this, you can use the link I posted above for chatting with the chatbot to wake the server before use with it running in the background. It should also be noted that when training data, the chatbot will be able to pull from that new data instantly meaning that if you are testing on the new link, you do not have to refresh the page.
+This function will automatically train all data that has the Status 'Ready'. Once all of the data has been trained, all data that has the Status 'Ready' will be changed to 'Trained' instead. 
+
+It is advised that while someone is training the Chatbot through Google Sheets that everyone else working on the spreadsheet does not change any Statuses to or from 'Ready' or some data may get false flagged as being trained on while other data may be false flagged as not being trained. For this reason, it is recommended that you coordinate when training to make sure these issues do not arise. Using Ctrl-Z or undo also does not reverse the effect of the function as the data is saved onto a separate database, but it does delete the Training Log saying the action was taken. In order to reverse Trained data, use the Untrain feature and vise versa. Please refrain from training data that has already been trained or untraining data the chatbot never knew as it will cause extra data to be used and errors to be raised for each respectively.
+
+As mentioned before, Render will spindown inactive deployments so training for the first time the deployment has been active in a while will result in it taking a much longer time. To avoid this, you can use the link I posted above for chatting with the chatbot to wake the server before use with it running in the background. 
+
+It should also be noted that when training data, the chatbot will be able to pull from that new data instantly meaning that if you are testing on the new link, you do not have to refresh the page.
 
 *2. Untrain Chatbot*
 
+This function will automatically untrain or remove all data that has the Status 'Untrain' from the Chatbot's database. Once all of the data has been removed, all data that has the Status 'Untrain' will be changed to 'Removed' instead.
 
+All of the statements made from the Train Chatbot functionality is also true here so be aware of all of the warnings listed there.
 
 *3. Delete Removed Data*
 
+This function will automatically delete all rows of data that have the Status 'Removed'. This action can be undone using Ctrl-Z or Undo to add the data back in and delete the action from the Training Log.
 
+This action is not subject to multithreading issues or server issues as it is run completely on Google Sheets.
 
 *4. Scrape Page*
 
+This function will automatically scrape / crawl a webpage to extract out relavant information and synthesize it into a question answer format. This method will automatically give the Prompt, Response, and Language of the data. It will also automatically set Subject to blank, Verified Translation to No, and the Status to Scraped signalling that the data must still be reviewed before approving and training the chatbot on it.
 
+There are some details that are important to note about this function however. For starters, due to restrictions with Render data rates and how much data can be processed in one fetch, restrictions are in place to make sure only 10 - 18 rows of data are added for each function call. If you want to scrape a page with a lot of information, it is recommended you use a different scraping method instead which will be outlined later. Another thing to keep in mind is that scraped data needs to be approved first before the chatbot is trained on it meaning scraped data is not automatically trained.
+
+This can also be undone using Ctrl-Z or Undo if necessary, but keep in mind that AI credits are used with every successful run of this function so try to use the data that is received wherever possible.
 
 *5. Approve Scraped Data*
 
+This method will make it so all rows with the Status 'Scraped' will be set instead to 'Ready' signalling it is ready for training.
 
-
+This function should be coordinated with the rest of the team to make sure unverified scraped data does not get approved. Approving and setting each one to 'Ready' may be a better way to train off of scraped data, but this function can help with quickly readying scraped data if you are confident in all of the data being correct.
 
 *6. Import CSV*
+
+This function allows users to directly import CSV data and append it directly into the 'Data' sheet in the spreadsheet.
+
+You can do this with any CSV file as long as it has 6 different columns of information. This does allow for people to scrape a page and save it as a CSV file as well allowing for a more thorough data set that is not restricted by Render. The way to scrape data like this will be mentioned later.
+
+
+
+
 
 
 
