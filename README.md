@@ -1,33 +1,60 @@
 # ChatterBot_Demo
 **Overview**
 
-This is a demo to show of the basic capabilities of ChatterBot in an informal environment (that being the console) 
-so we may later evaluate if this chatbot is a good idea before going forward with the UI/UX design for the chatbot
+This is a demo to show of the basic capabilities of ChatterBot with a basic training interface.
+If this chatbot is deemed to be good functionality wise, further improvements to the UI/UX can be made.
 
 
 **How to Run**
 
-1. Make sure you are navigated to the first ChatterBot folder directly in the repo.
-2. Enter one of the commands below to indicate how you want to run the chatbot.
+1. You can find a deployed version of the chatbot for testing at this link [here](https://chatterbot-demo.onrender.com/) (Please note that the server spins down when it is not active
+so it may take a while for it to load when opening it for the first time in a while).
+2. Type prompts into the textbox and hit send (the enter key will not work)
+3. Wait for a response. If no response comes, try reloading the page or retrying the link.
 
-        To run chatbot on new training data and test it:
-            python ./dopomoha.py
-        To only run the chatbot on new training data:
-            python ./dopomoha.py --mode train
-        To only run the chatbot to test:
-            python ./dopomoha.py --mode talk
-3. If you are testing the chatbot, enter any prompts you would like it to answer after it fully loads (may take a bit depending on if you are also training it on new data as well)
-
+I have encountered issues of a 400 (bad request) error from time to time. If you get this error, close out of the tab and try the link again to see if that resolves it.
 
 **Training**
+
+Training can be done in numerous ways including through Google Sheets which connects through the Render deployment, CSV upload to the Google Sheets, or direct training through the generation of a JSON file.
+
+***1. Directly through Google Sheets***
 
 For ease of access, I have it set up so it is trained from a Google Sheet which is located here:
 
 https://docs.google.com/spreadsheets/d/1QMV6EBLcvzgh_vQPs7wRQo6kwOwqc5UBZW6izwp33aU/edit?gid=1726193122#gid=1726193122
 
-It should allow editting privilages to anyone with a link, but let me know if that is not the case.
+It should allow viewing privilages to anyone with a link. To gain editting privilages, please feel free to send a request through the Google Sheet.
 
-In the spreadsheet, there are 5 columns that being the Prompt (what the user enters), the Response (what the chatbot responds with), the Subject (categorization of the information requested), the Language (what language the prompt and response are written in), and Verified (which is for verifying that the questions are correctly translated for that given language). I am open to add more columns for organization and sorting purposes if you recommend any, but refrain from adding them for now or it may break the conversion.
+In the spreadsheet, there are 2 sheets that being Data and Training Log. Data has 6 columns that being the Prompt (what the user enters), the Response (what the chatbot responds with), the Subject (categorization of the information requested), the Language (what language the prompt and response are written in), Verified Translation (which is for verifying that the questions are correctly translated for that given language), and Status (what the current statud of the training data is including not ready to train, ready to train, trained, untrain, removed, and scraped which I will go into later). I am open to add more columns for organization and sorting purposes if you recommend any, but refrain from adding them for now or it may break the training scripts set in place right now. There is also the Training Log sheet which consists of 4 columns that being Command (what action or script was run), User (who ran the command), Data (how many rows were impacted by the command), and Time (a timestamp of when the command was run).
+
+All functionality for the Google Sheet is under the Chatbot Functions tab.
+
+*1. Train Chatbot*
+
+This function will automatically train all data that has the Status 'Ready'. Once all of the data has been trained, all data that has the Status 'Ready' will be changed to 'Trained' instead. It is advised that while someone is training the Chatbot through Google Sheets that everyone else working on the spreadsheet does not change any Statuses to or from 'Ready' or some data may get false flagged as being trained on while other data may be false flagged as not being trained. For this reason, it is recommended that you coordinate when training to make sure these issues do not arise. As mentioned before, Render will spindown inactive deployments so training for the first time the deployment has been active in a while will result in it taking a much longer time. To avoid this, you can use the link I posted above for chatting with the chatbot to wake the server before use with it running in the background. It should also be noted that when training data, the chatbot will be able to pull from that new data instantly meaning that if you are testing on the new link, you do not have to refresh the page.
+
+*2. Untrain Chatbot*
+
+
+
+*3. Delete Removed Data*
+
+
+
+*4. Scrape Page*
+
+
+
+*5. Approve Scraped Data*
+
+
+
+
+*6. Import CSV*
+
+
+
 
 Once new data is trained for the Chatbot, I have it set up to store the trained data in MongoDB which can be seen by connecting to this cluster on MongoDB Compass:
 
