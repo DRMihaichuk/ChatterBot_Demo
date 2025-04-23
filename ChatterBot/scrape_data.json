@@ -1,0 +1,84 @@
+{
+  "conversation": [
+    {
+      "aPrompt": "Care sunt metodele contraceptive disponibile?",
+      "bResponse": "Metodele contraceptive disponibile \u00een Rom\u00e2nia includ pilulele contraceptive, prezervativele, inelele contraceptive \u0219i contraceptivele de urgen\u021b\u0103, care pot fi achizi\u021bionate f\u0103r\u0103 re\u021bet\u0103 de la farmacie. Unele solu\u021bii contraceptive sunt acoperite prin programul Sprijin pentru femeile refugiate. Avortul la cerere este legal p\u00e2n\u0103 la 14 s\u0103pt\u0103m\u00e2ni de sarcin\u0103, iar p\u00e2n\u0103 la 9 s\u0103pt\u0103m\u00e2ni se poate opta pentru avort cu medicamente abortive. Infec\u021bia cu HPV, cancerul de col uterin \u0219i de s\u00e2n, precum \u0219i infec\u021biile cu transmitere sexual\u0103 sunt printre serviciile de s\u0103n\u0103tate reproductiv\u0103 disponibile \u00een Rom\u00e2nia. For more details, visit https://womencenter.info/ro/sanatate.",
+      "cSubject": "",
+      "dLanguage": "Romanian",
+      "eVerified Language": "Yes",
+      "fStatus": "Scraped"
+    },
+    {
+      "aPrompt": "Ce este infertilitatea \u0219i cum poate fi tratat\u0103?",
+      "bResponse": "Infertilitatea este incapacitatea de a concepe un copil dup\u0103 un an de \u00eencerc\u0103ri nereu\u0219ite. Aceasta poate fi cauzat\u0103 de diferite probleme de s\u0103n\u0103tate, cum ar fi tulbur\u0103rile hormonale, infec\u021biile sau problemele anatomice. Tratamentul pentru infertilitate poate include medicamente pentru stimularea ovula\u021biei, interven\u021bii chirurgicale pentru corectarea problemelor anatomice sau tehnici de reproducere asistat\u0103, cum ar fi fertilizarea in vitro. Este important s\u0103 consul\u021bi un medic specialist \u00een fertilitate pentru a determina cauza infertilit\u0103\u021bii \u0219i pentru a g\u0103si cel mai potrivit tratament pentru tine. For more details, visit https://womencenter.info/ro/sanatate.",
+      "cSubject": "",
+      "dLanguage": "Romanian",
+      "eVerified Language": "Yes",
+      "fStatus": "Scraped"
+    },
+    {
+      "aPrompt": "Care sunt simptomele unei infec\u021bii cu transmitere sexual\u0103?",
+      "bResponse": "Simptomele unei infec\u021bii cu transmitere sexual\u0103 pot include secre\u021bii anormale, m\u00e2nc\u0103rimi, usturimi sau dureri \u00een zona genital\u0103, leziuni sau irita\u021bii, durere sau disconfort \u00een timpul actului sexual, s\u00e2nger\u0103ri anormale sau s\u00e2ngerare \u00eentre menstrua\u021bii. Este important s\u0103 consul\u021bi un medic pentru diagnostic \u0219i tratament adecvat. For more details, visit https://womencenter.info/ro/sanatate.",
+      "cSubject": "",
+      "dLanguage": "Romanian",
+      "eVerified Language": "Yes",
+      "fStatus": "Scraped"
+    },
+    {
+      "aPrompt": "C\u00e2t de important\u0103 este igiena intim\u0103 pentru s\u0103n\u0103tatea reproductiv\u0103?",
+      "bResponse": "Igiena intim\u0103 este foarte important\u0103 pentru s\u0103n\u0103tatea reproductiv\u0103, deoarece poate ajuta la prevenirea infec\u021biilor cu transmitere sexual\u0103, inclusiv a infec\u021biei cu HPV, care poate duce la cancerul de col uterin. Men\u021binerea unei igiene corecte poate contribui la men\u021binerea s\u0103n\u0103t\u0103\u021bii sistemului reproductiv \u0219i la prevenirea unor complica\u021bii pe termen lung. For more details, visit https://womencenter.info/ro/sanatate.",
+      "cSubject": "",
+      "dLanguage": "Romanian",
+      "eVerified Language": "Yes",
+      "fStatus": "Scraped"
+    },
+    {
+      "aPrompt": "Cum poate fi prevenit\u0103 sarcina nedorit\u0103?",
+      "bResponse": "Prevenirea sarcinii nedorite poate fi realizat\u0103 prin utilizarea metodelor contraceptive disponibile \u00een Rom\u00e2nia, cum ar fi pilulele contraceptive, prezervativele, inelele contraceptive sau contraceptivele de urgen\u021b\u0103. De asemenea, femeile pot opta pentru avort la cerere \u00een primele 14 s\u0103pt\u0103m\u00e2ni de sarcin\u0103, conform legisla\u021biei \u00een vigoare. Este important s\u0103 discu\u021bi cu un medic ginecolog pentru a alege cea mai potrivit\u0103 metod\u0103 contraceptiv\u0103 pentru tine \u0219i s\u0103 te informezi cu privire la serviciile de s\u0103n\u0103tate reproductiv\u0103 disponibile pentru a preveni sarcina nedorit\u0103. For more details, visit https://womencenter.info/ro/sanatate.",
+      "cSubject": "",
+      "dLanguage": "Romanian",
+      "eVerified Language": "Yes",
+      "fStatus": "Scraped"
+    },
+    {
+      "aPrompt": "Ce analize medicale sunt recomandate \u00een cazul unei probleme de fertilitate?",
+      "bResponse": "\u00cen cazul unei probleme de fertilitate, sunt recomandate analize precum hormonii tiroidieni, hormonii de reproducere, analiza func\u021biei ovarelor, spermograma pentru partener, analize pentru depistarea infec\u021biilor cu transmitere sexual\u0103 \u0219i examinarea uterului \u0219i a trompelor uterine. For more details, visit https://womencenter.info/ro/sanatate.",
+      "cSubject": "",
+      "dLanguage": "Romanian",
+      "eVerified Language": "Yes",
+      "fStatus": "Scraped"
+    },
+    {
+      "aPrompt": "Care sunt factorii care pot influen\u021ba s\u0103n\u0103tatea reproductiv\u0103 a femeilor?",
+      "bResponse": "Factorii care pot influen\u021ba s\u0103n\u0103tatea reproductiv\u0103 a femeilor includ accesul la servicii medicale de calitate pentru monitorizarea sarcinii, al\u0103ptare \u0219i \u00eengrijirea nou-n\u0103scutului, utilizarea contracep\u021biei pentru planificare familial\u0103 \u0219i informare despre \u00eentreruperea sarcinii \u00een condi\u021bii legale \u0219i sigure. De asemenea, prevenirea \u0219i tratarea infec\u021biilor cu transmitere sexual\u0103, precum \u0219i screening-ul pentru HPV, cancerul de col uterin \u0219i cancerul de s\u00e2n sunt esen\u021biale pentru men\u021binerea s\u0103n\u0103t\u0103\u021bii reproductive a femeilor. For more details, visit https://womencenter.info/ro/sanatate.",
+      "cSubject": "",
+      "dLanguage": "Romanian",
+      "eVerified Language": "Yes",
+      "fStatus": "Scraped"
+    },
+    {
+      "aPrompt": "Ce modific\u0103ri ale stilului de via\u021b\u0103 pot \u00eembun\u0103t\u0103\u021bi s\u0103n\u0103tatea reproductiv\u0103?",
+      "bResponse": "Adoptarea unui stil de via\u021b\u0103 s\u0103n\u0103tos, care include o diet\u0103 echilibrat\u0103, exerci\u021bii regulate, evitarea fumatului \u0219i consumul moderat de alcool poate \u00eembun\u0103t\u0103\u021bi s\u0103n\u0103tatea reproductiv\u0103. De asemenea, accesul la servicii medicale de calitate, monitorizarea prenatal\u0103 \u0219i informarea corect\u0103 despre contracep\u021bie \u0219i planificarea familial\u0103 sunt aspecte importante pentru men\u021binerea unei s\u0103n\u0103t\u0103\u021bi reproductives bune. For more details, visit https://womencenter.info/ro/sanatate.",
+      "cSubject": "",
+      "dLanguage": "Romanian",
+      "eVerified Language": "Yes",
+      "fStatus": "Scraped"
+    },
+    {
+      "aPrompt": "Cum poate afecta fumatul fertilitatea?",
+      "bResponse": "Fumatul poate afecta fertilitatea prin reducerea calit\u0103\u021bii ovocitelor \u0219i a spermei, cresc\u00e2nd riscul de infertilitate la femei \u0219i b\u0103rba\u021bi. Este important s\u0103 renun\u021bi la fumat \u00eenainte de a r\u0103m\u00e2ne \u00eens\u0103rcinat\u0103 pentru a avea \u0219anse mai mari de concep\u021bie \u0219i a evita eventuale complica\u021bii \u00een timpul sarcinii. For more details, visit https://womencenter.info/ro/sanatate.",
+      "cSubject": "",
+      "dLanguage": "Romanian",
+      "eVerified Language": "Yes",
+      "fStatus": "Scraped"
+    },
+    {
+      "aPrompt": "Care sunt riscurile asociate avortului \u0219i cum pot fi reduse?",
+      "bResponse": "Riscurile asociate avortului includ complicatii precum sangerare excesiva, infectii, leziuni ale organelor reproducatoare si afectarea fertilitatii. Aceste riscuri pot fi reduse prin efectuarea avortului intr-un mediu medical adecvat, respectarea indicatiilor medicale si urmarea unui plan de ingrijire post-abort. Este important sa discuti deschis cu medicul tau despre orice nelamuriri si sa urmezi instructiunile sale cu atentie pentru a minimiza riscurile asociate avortului. For more details, visit https://womencenter.info/ro/sanatate.",
+      "cSubject": "",
+      "dLanguage": "Romanian",
+      "eVerified Language": "Yes",
+      "fStatus": "Scraped"
+    }
+  ]
+}

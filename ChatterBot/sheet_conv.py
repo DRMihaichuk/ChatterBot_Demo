@@ -3,6 +3,7 @@ import requests
 import csv
 import io
 import json
+import argparse
 
 # Replace with your sheet's ID
 sheet_id = "1QMV6EBLcvzgh_vQPs7wRQo6kwOwqc5UBZW6izwp33aU"
@@ -10,6 +11,10 @@ sheet_name = "Data"
 csv_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
 script_id = "AKfycbxukihwVvSvLFBHOeEcrMPlCfk4TBNyLUqRUefo9_3WWdI0C2BzBUeyw8M-CHnKeuep"
 script_url = f"https://script.google.com/macros/s/{script_id}/exec"
+
+parser = argparse.ArgumentParser(description="For extracting specific data from Google Sheets")
+parser.add_argument("--extract", help="what information you want to extract from the sheet", default="Ready")
+args = parser.parse_args()
 
 response = requests.get(csv_url)
 response.raise_for_status()  # Will raise an error if request failed
@@ -24,7 +29,7 @@ csv_file = io.StringIO(response.text)
 reader = csv.DictReader(csv_file)
 
 # Filtering out already trained data
-filtered_data = [row for row in reader if row['Status'] == 'Ready']
+filtered_data = [row for row in reader if row['Status'] == args.extract]
 
 conversation_list = []
 for row in filtered_data:
