@@ -47,9 +47,9 @@ def extract_h1_and_paragraphs(url, format):
             i += 1
 
     if format == "REND":
-        question_number = int(18 / len(entries))
+        question_number = int(16 / len(entries))
         if question_number <= 0:
-            entries = entries[:18]
+            entries = entries[:16]
             question_number = 1
         # print(len(entries), question_number)
         return entries, question_number
@@ -57,7 +57,7 @@ def extract_h1_and_paragraphs(url, format):
 
 def generate_questions(heading, question_number):
     prompt = f"""
-    Generate exactly {question_number} short, distinct questions a user might ask under the heading: '{heading}'.
+    Generate {question_number} short, distinct questions a user might ask under the heading: '{heading}'.
 
     Return only a valid Python list of strings. 
     Each item should be a clean question in quotes, with no numbering or line breaks in the list elements.
